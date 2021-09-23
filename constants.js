@@ -1,0 +1,1 @@
+exports.COMPETITIONS_API = 'https://kontests.net';

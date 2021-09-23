@@ -2,9 +2,8 @@ require('dotenv')
     .config({
         path: __dirname + '/.env'
     })
-const {
-    SlashCommandBuilder
-} = require('@discordjs/builders');
+const ConfigureCompetitionCommands = require('./configuration/Competitions');
+const ConfigureNewsCommands = require('./configuration/News')
 const {
     REST
 } = require('@discordjs/rest');
@@ -12,10 +11,10 @@ const {
     Routes
 } = require('discord-api-types/v9');
 
+
 const commands = [
-        new SlashCommandBuilder()
-        .setName('test')
-        .setDescription('Just a test command!'),
+        ConfigureCompetitionCommands(),
+        ConfigureNewsCommands()
     ]
     .map(command => command.toJSON());
 
