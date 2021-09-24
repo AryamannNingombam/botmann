@@ -9,7 +9,7 @@ const {
 const HandleNewsCommand = async (interaction) => {
     const subcommand = interaction.options._subcommand;
     const result = await GetNews(subcommand)
-    const array = result.data;
+    const array = result.articles;    
     if (!array || array.length === 0) {
         await interaction.reply('No news to be found!')
     } else {

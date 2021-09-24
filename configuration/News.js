@@ -13,7 +13,7 @@ const ConfigureNewsCommands = () => {
 
     NEWS_API_ALL_CATEGORIES.forEach(news => {
         NewsCommands
-            .setSubcommand(subcommand => subcommand.setName(news)
+            .addSubcommand(subcommand => subcommand.setName(news)
                 .setDescription(`News for ${news} category`))
     })
     return NewsCommands;
