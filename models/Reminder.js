@@ -15,18 +15,22 @@ const ReminderSchema = new Schema({
         type: Boolean,
         required: true,
         default: false,
+    },
+    active: {
+        type: Boolean,
+        required: true,
+        default: true,
     }
 
 
 })
 
 ReminderSchema.methods.toggleDone = async () => {
-    this.done = !this.done;
-    await this.save();
+    let user = this;
+    user.done = !user.done;
+    await user.save();
     return;
 }
 
 
-
-
-export default mongoose.model("Reminder", ReminderSchema);
+module.exports = mongoose.model("Reminder", ReminderSchema);
