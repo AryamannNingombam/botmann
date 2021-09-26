@@ -4,6 +4,7 @@ require('dotenv')
     })
 const ConfigureCompetitionCommands = require('./configuration/Competitions');
 const ConfigureNewsCommands = require('./configuration/News')
+const ConfigureBotCommands = require('./configuration/Bot');
 const {
     REST
 } = require('@discordjs/rest');
@@ -14,7 +15,8 @@ const {
 
 const commands = [
         ConfigureCompetitionCommands(),
-        ConfigureNewsCommands()
+        ConfigureNewsCommands(),
+        ConfigureBotCommands(),
     ]
     .map(command => command.toJSON());
 

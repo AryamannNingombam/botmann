@@ -9,8 +9,10 @@ const {
 const {
     SetReminder
 } = require('./commands/Reminder');
+
 const HandleCompetitionsCommand = require('./commands/Competitions');
 const HandleNewsCommand = require('./commands/News');
+const HandleBotCommands = require('./commands/Bot');
 const ConnectDB = require('./services/ConnectDB');
 
 
@@ -42,6 +44,8 @@ const Start = async () => {
             HandleCompetitionsCommand(interaction);
         } else if (commandName === 'news') {
             HandleNewsCommand(interaction);
+        }else if (commandName === 'bot'){
+            HandleBotCommands(interaction);
         }
     });
 
