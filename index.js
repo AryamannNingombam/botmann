@@ -51,15 +51,11 @@ const Start = async () => {
 
     client.on('messageCreate', async message => {
         if (message.author.bot) return;
-        // reminder  || TITLE || DESCRIPTION || TIME IN JS FORMAT;
          const content  = message.content;
-        console.log(message);
-        
         console.log(content.slice(0,8));
         if (content.toLowerCase().indexOf('reminder')!==-1){
             SetReminder(content, message);
             } else {
-                
                 message.reply("fuck you too");
             }
 

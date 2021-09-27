@@ -3,6 +3,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ReminderSchema = new Schema({
+    user: {
+        type: mongoose.Types.ObjectId,
+        required: true,
+    },
     title: {
         type: String,
         required: true,
@@ -20,6 +24,10 @@ const ReminderSchema = new Schema({
         type: Boolean,
         required: true,
         default: true,
+    },
+    deadline: {
+        type: Date,
+        required: true,
     }
 
 
